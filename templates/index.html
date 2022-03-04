@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Prediction ML App</title>
+</head>
+<body>
+    <div>
+        <h1>Car Evaluation ML App</h1>
+    </div><br>
+
+    <div>
+        <a href="/">Refresh</a>
+    </div>
+
+    <form action="/predict" method="POST">
+        <label for="buying">Select the Buying level:</label>
+        <select name="buyinglevel" id="buylev">
+            <option value="vhigh">Very High</option>
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+        </select><br><br>
+
+        <label for="maintainancelevel">Select the Maintenance Level:</label>
+        <select name="maintainancelevel" id="mainlev">
+            <option value="vhigh">Very High</option>
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+        </select><br><br>
+
+        <label for="noofdoors">Select Numbr of Doors</label>
+        <select name="noofdoors" id="ndoors">
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select><br><br>
+
+        <label for="noofpersons">Select Numbr of Persons</label>
+        <select name="noofpersons" id="npersons">
+            <option value="2">2</option>
+            <option value="4">4</option>
+        </select><br><br>
+
+        <label for="luggboot">Select Luggage Boot Level</label>
+        <select name="luggboot" id="lboot">
+            <option value="sm">Small</option>
+            <option value="md">Medium</option>
+            <option value="bg">Big</option>
+        </select><br><br>
+
+        <label for="safety">Select the Level of Safety</label>
+        <select name="safety" id="sfty">
+            <option value="hg">High</option>
+            <option value="md">Medium</option>
+            <option value="lw">Low</option>
+        </select><br><br>
+
+        <label for="modelselect">Select the Model</label>
+        <select name="ml_model" id="ml_sel">
+            <option value="lg">Logistic Regression</option>
+            <option value="nb">Naive Bayes</option>
+            <option value="mlp">MLP Classifier</option>
+        </select><br><br>
+
+        <button type="submit" value="Submit">Submit</button>
+                
+    </form><br><br>
+    <div>
+        The car is: {{r}}
+    </div>
+</body>
+</html>
